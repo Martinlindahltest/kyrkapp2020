@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { Text, View } from 'react-native';
-//import MealsNavigator from './Navigation/MealsNavigator'
 import * as Font from 'expo-font'
 import { AppLoading } from 'expo'
+import MainNavigator from './Navigation/MainNavigator'
+
 
 const fetchFonts = () => {
   return Font.loadAsync({
@@ -24,10 +25,7 @@ export default function App() {
   }
 
   return (
-    // <MealsNavigator />
-    <Text>
-      hello martin
-    </Text>
+    <MainNavigator />
   );
 }
 
