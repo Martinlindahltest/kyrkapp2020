@@ -3,6 +3,7 @@ import { HeaderButton } from 'react-navigation-header-buttons';
 import { Ionicons } from '@expo/vector-icons';
 
 const CustomHeaderButton = props => {
+    console.log('headerbutton körs')
     return (
         <HeaderButton
             {...props}

@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, Text, Button } from 'react-native'
+import { View, Text, Button, SafeAreaView } from 'react-native'
 import { NavigationContainer } from '@react-navigation/native';
 import HeaderButton from '../Components/HeaderButton'
 import { HeaderButtons, Item } from 'react-navigation-header-buttons';
@@ -7,9 +7,12 @@ import { HeaderButtons, Item } from 'react-navigation-header-buttons';
 
 
 import { createStackNavigator } from '@react-navigation/stack';
-import { createDrawerNavigator } from '@react-navigation/drawer';
+import { createDrawerNavigator, DrawerItemList } from '@react-navigation/drawer';
+import { Ionicons } from '@expo/vector-icons';
 
-import DetailsScreen, { screenOptions as detailScreenOptions } from '../Screens/DetailsScreen'
+
+
+import DetailsScreen from '../Screens/DetailsScreen'
 import HomeScreen from '../Screens/HomeScreen'
 
 const MainNavigator = () => {
@@ -26,17 +29,17 @@ const MainNavigator = () => {
                     component={DetailsScreen}
                     options={navData => {
                         return {
-                            headerTitle: 'Fungerar dettaaaa?',
+                            headerTitle: 'Details',
                             headerLeft: () => {
                                 // console.log(navData)
-                                return <HeaderButtons>
+                                return <HeaderButtons HeaderButtonComponent={HeaderButton}>
                                     <Item
                                         title="Menu"
-                                        iconName="ios-menu"
                                         onPress={() => {
                                             navData.navigation.toggleDrawer()
                                         }}
                                     />
+
                                 </HeaderButtons>
                             }
                         }
@@ -46,15 +49,30 @@ const MainNavigator = () => {
         )
     }
 
+
     return (
 
         <NavigationContainer>
-            <Drawer.Navigator>
+            <Drawer.Navigator drawerContent={props => {
+                return (
+                    <View style={{ flex: 1, paddingTop: 20 }}>
+                        <SafeAreaView forceInset={{ top: 'always', horizontal: 'never' }}>
+                            <DrawerItemList {...props} />
+                            <Button
+                                title="Logout"
+                                color={'blue'}
+                                onPress={() => {
+                                    console.log('i drawer')
+                                }}
+                            />
+                        </SafeAreaView>
+                    </View>
+                );
+            }}>
                 <Drawer.Screen name="Feed" component={HomeScreen} />
                 <Drawer.Screen
-                    name="den med options"
+                    name="med options"
                     component={StackNavigator}
-
                 />
             </Drawer.Navigator>
         </NavigationContainer>

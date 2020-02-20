@@ -1,7 +1,6 @@
 import React from 'react'
 import { View, Text } from 'react-native'
-import { HeaderButtons, Item } from 'react-navigation-header-buttons';
-import HeaderButton from '../Components/HeaderButton'
+import { Ionicons } from '@expo/vector-icons';
 
 
 
@@ -15,6 +14,8 @@ function DetailsScreen({ navigation }) {
     return (
         <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
             <Text>Details Screen egen fiiil</Text>
+            <Ionicons name="md-checkmark-circle" size={32} color="green" />
+
         </View>
     );
 }
