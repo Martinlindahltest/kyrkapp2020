@@ -27,6 +27,18 @@ const MainNavigator = () => {
                     options={navData => {
                         return {
                             headerTitle: 'Fungerar detta?',
+                            headerLeft: (props) => {
+                                // console.log(navData)
+                                return <HeaderButtons>
+                                    <Item
+                                        title="Menu"
+                                        iconName="ios-menu"
+                                        onPress={() => {
+                                            console.log('jajaj')
+                                        }}
+                                    />
+                                </HeaderButtons>
+                            }
                         }
                     }}
                 />
