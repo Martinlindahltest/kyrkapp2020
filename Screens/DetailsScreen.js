@@ -19,20 +19,21 @@ function DetailsScreen({ navigation }) {
     );
 }
 
-export const screenOptions = navData => {
-    return {
-        headerTitle: 'Kalender',
-        headerLeft: (
-            <HeaderButtons HeaderButtonComponent={HeaderButton}>
-                <Item
-                    title="Menu"
-                    iconName="ios-menu"
-                    onPress={() => {
-                        navData.navigation.dispatch(DrawerActions.toggleDrawer());
-                    }}
-                />
-            </HeaderButtons>
-        )
-    };
-};
+// export const screenOptions = navData => {
+//     return {
+//         headerTitle: 'Fungerar detta?',
+//         headerLeft: () => {
+//             // console.log(navData)
+//             return <HeaderButtons>
+//                 <Item
+//                     title="Menu"
+//                     iconName="ios-menu"
+//                     onPress={() => {
+//                         navData.navigation.toggleDrawer()
+//                     }}
+//                 />
+//             </HeaderButtons>
+//         }
+//     }
+// }
 export default DetailsScreen

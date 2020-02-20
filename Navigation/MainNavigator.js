@@ -26,15 +26,15 @@ const MainNavigator = () => {
                     component={DetailsScreen}
                     options={navData => {
                         return {
-                            headerTitle: 'Fungerar detta?',
-                            headerLeft: (props) => {
+                            headerTitle: 'Fungerar dettaaaa?',
+                            headerLeft: () => {
                                 // console.log(navData)
                                 return <HeaderButtons>
                                     <Item
                                         title="Menu"
                                         iconName="ios-menu"
                                         onPress={() => {
-                                            console.log('jajaj')
+                                            navData.navigation.toggleDrawer()
                                         }}
                                     />
                                 </HeaderButtons>
