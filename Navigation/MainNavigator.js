@@ -1,16 +1,16 @@
 import React from 'react'
 import { View, Text, Button } from 'react-native'
 import { NavigationContainer } from '@react-navigation/native';
+import HeaderButton from '../Components/HeaderButton'
+import { HeaderButtons, Item } from 'react-navigation-header-buttons';
+
+
 
 import { createStackNavigator } from '@react-navigation/stack';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 
-import DetailsScreen from '../Screens/DetailsScreen'
+import DetailsScreen, { screenOptions as detailScreenOptions } from '../Screens/DetailsScreen'
 import HomeScreen from '../Screens/HomeScreen'
-import { render } from 'react-dom';
-
-
-
 
 const MainNavigator = () => {
 
@@ -19,9 +19,17 @@ const MainNavigator = () => {
 
     const StackNavigator = () => {
         return (
-            <Stack.Navigator initialRouteName="Home">
+            <Stack.Navigator initialRouteName="Details">
                 <Stack.Screen name="Home" component={HomeScreen} />
-                <Stack.Screen name="Details" component={DetailsScreen} />
+                <Stack.Screen
+                    name="Details"
+                    component={DetailsScreen}
+                    options={navData => {
+                        return {
+                            headerTitle: 'Fungerar detta?',
+                        }
+                    }}
+                />
             </Stack.Navigator>
         )
     }
@@ -29,13 +37,13 @@ const MainNavigator = () => {
     return (
 
         <NavigationContainer>
-            {/* <Stack.Navigator initialRouteName="Home">
-                <Stack.Screen name="Home" component={HomeScreen} />
-                <Stack.Screen name="Details" component={DetailsScreen} />
-            </Stack.Navigator> */}
             <Drawer.Navigator>
-                <Drawer.Screen name="Feed" component={StackNavigator} />
-                <Drawer.Screen name="Article" component={HomeScreen} />
+                <Drawer.Screen name="Feed" component={HomeScreen} />
+                <Drawer.Screen
+                    name="den med options"
+                    component={StackNavigator}
+
+                />
             </Drawer.Navigator>
         </NavigationContainer>
     )
