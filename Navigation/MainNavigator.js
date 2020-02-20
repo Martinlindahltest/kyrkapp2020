@@ -14,6 +14,7 @@ import { Ionicons } from '@expo/vector-icons';
 
 import DetailsScreen from '../Screens/DetailsScreen'
 import HomeScreen from '../Screens/HomeScreen'
+import iconSet from '@expo/vector-icons/build/FontAwesome5';
 
 const MainNavigator = () => {
 
@@ -35,11 +36,11 @@ const MainNavigator = () => {
                                 return <HeaderButtons HeaderButtonComponent={HeaderButton}>
                                     <Item
                                         title="Menu"
+                                        iconName="ios-menu"
                                         onPress={() => {
                                             navData.navigation.toggleDrawer()
                                         }}
                                     />
-
                                 </HeaderButtons>
                             }
                         }
