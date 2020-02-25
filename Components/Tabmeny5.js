@@ -6,8 +6,8 @@ export default function Tabmeny5(props) {
     const styles = StyleSheet.create({
         tabItem: {
             flex: 1,
-            height: 55,
-            backgroundColor: 'black'
+            backgroundColor: 'black',
+            height: 60,
         },
         img: {
             height: '100%',
@@ -19,46 +19,59 @@ export default function Tabmeny5(props) {
             textAlign: 'center',
             backgroundColor: 'black',
             fontSize: 12,
-            paddingBottom: 8
+        },
+        tabContainer: {
+            height: 80,
+            backgroundColor: 'black'
         }
     });
     return (
-        <View style={{ flex: 1, flexDirection: 'row' }}>
-            <View style={styles.tabItem}>
-                <Image
-                    style={styles.img}
-                    source={require('../assets/tab5/Alla.png')}
-                />
-                <Text style={styles.textUnderBild}>Alla</Text>
-            </View>
-            <View style={styles.tabItem}>
-                <Image
-                    style={styles.img}
-                    source={require('../assets/tab5/Gudstjanst.png')}
-                />
-                <Text style={styles.textUnderBild}>Gudstjanst</Text>
-            </View>
-            <View style={styles.tabItem}>
-                <Image
-                    style={styles.img}
-                    source={require('../assets/tab5/Musik.png')}
-                />
-                <Text style={styles.textUnderBild}>Musik</Text>
-            </View>
-            <View style={styles.tabItem}>
-                <Image
-                    style={styles.img}
-                    source={require('../assets/tab5/Barn.png')}
-                />
-                <Text style={styles.textUnderBild}>Barn</Text>
-            </View>
-            <View style={styles.tabItem}>
-                <Image
-                    style={styles.img}
-                    source={require('../assets/tab5/Vuxen.png')}
-                />
-                <Text style={styles.textUnderBild}>Ung/Vuxen</Text>
+        <View style={styles.tabContainer}>
+
+            <View style={{
+                flex: 1, flexDirection: 'row',
+            }}>
+                <View style={styles.tabItem}>
+                    <TouchableOpacity onPress={console.log('yuyuy')}>
+
+                        <Image
+                            style={styles.img}
+                            source={require('../assets/tab5/Alla.png')}
+                        />
+                        <Text style={styles.textUnderBild}>Alla</Text>
+                    </TouchableOpacity>
+
+                </View>
+                <View style={styles.tabItem}>
+                    <Image
+                        style={styles.img}
+                        source={require('../assets/tab5/Gudstjanst.png')}
+                    />
+                    <Text style={styles.textUnderBild}>Gudstjanst</Text>
+                </View>
+                <View style={styles.tabItem}>
+                    <Image
+                        style={styles.img}
+                        source={require('../assets/tab5/Musik.png')}
+                    />
+                    <Text style={styles.textUnderBild}>Musik</Text>
+                </View>
+                <View style={styles.tabItem}>
+                    <Image
+                        style={styles.img}
+                        source={require('../assets/tab5/Barn.png')}
+                    />
+                    <Text style={styles.textUnderBild}>Barn</Text>
+                </View>
+                <View style={styles.tabItem}>
+                    <Image
+                        style={styles.img}
+                        source={require('../assets/tab5/Vuxen.png')}
+                    />
+                    <Text style={styles.textUnderBild}>Ung/Vuxen</Text>
+                </View>
             </View>
         </View>
+
     )
 }

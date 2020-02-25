@@ -7,6 +7,7 @@ const ForstaSida = () => {
         <View>
             <Text>ForstaSida</Text>
             <Tabmeny5 />
+            <Text>under containern</Text>
         </View>
     )
 }
