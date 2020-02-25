@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, Text, Image, StyleSheet, Button, TouchableOpacity, ImageBackground } from 'react-native'
+import { View, Text, Image, StyleSheet, Button, TouchableOpacity } from 'react-native'
 
 export default function Tabmeny5(props) {
 
