@@ -83,8 +83,13 @@ const MainNavigator = () => {
                     }}
                 />
                 <Stack.Screen
-                    name="Details"
-                    component={DetailsScreen}
+                    name="KalenderDetalj"
+                    component={KalenderDetalj}
+                    options={navData => {
+                        return {
+                            headerTitle: ''
+                        }
+                    }}
                 />
             </Stack.Navigator>
         )
