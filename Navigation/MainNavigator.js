@@ -10,10 +10,6 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { createDrawerNavigator, DrawerItemList } from '@react-navigation/drawer';
 
 
-
-import DetailsScreen from '../Screens/DetailsScreen'
-import HomeScreen from '../Screens/HomeScreen'
-
 import ForstaSida from '../Screens/ForstaSida'
 import Kalender from '../Screens/Kalender'
 import KalenderDetalj from '../Screens/KalenderDetalj'
@@ -28,35 +24,6 @@ const MainNavigator = () => {
 
     const Drawer = createDrawerNavigator();
     const Stack = createStackNavigator();
-
-    const StackNavigator = () => {
-        return (
-            <Stack.Navigator initialRouteName="Details">
-                <Stack.Screen name="Home" component={HomeScreen} />
-                <Stack.Screen
-                    name="Details"
-                    component={DetailsScreen}
-                    options={navData => {
-                        return {
-                            headerTitle: 'Details',
-                            headerLeft: () => {
-                                // console.log(navData)
-                                return <HeaderButtons HeaderButtonComponent={HeaderButton}>
-                                    <Item
-                                        title="Menu"
-                                        iconName="ios-menu"
-                                        onPress={() => {
-                                            navData.navigation.toggleDrawer()
-                                        }}
-                                    />
-                                </HeaderButtons>
-                            }
-                        }
-                    }}
-                />
-            </Stack.Navigator>
-        )
-    }
 
     const kalenderStack = () => {
         return (
