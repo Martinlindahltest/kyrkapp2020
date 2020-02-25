@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { View, Text, Button } from 'react-native'
 import dbUrl from '../dbConfig/dbUrl'
+import SortKalender from './SortKalender';
 
 export default function FetchKalender(props) {
 
@@ -17,7 +18,7 @@ export default function FetchKalender(props) {
     }
 
     useEffect(() => {
-        console.log('datafetch kalender')
+        //     console.log('datafetch kalender')
         fetchData();
     }, [])
 
@@ -25,8 +26,6 @@ export default function FetchKalender(props) {
     const MusikObjekt = []
     const BarnObjekt = []
     const VuxenObjekt = []
-
-    console.log(typeof data)
 
     if (data) {
         data.map(obj => {
@@ -46,11 +45,18 @@ export default function FetchKalender(props) {
         )
     }
 
+    // console.log(MusikObjekt)
+
+    const propsObject = {
+        GtjObjekt, MusikObjekt, BarnObjekt, VuxenObjekt, sort: props.sort
+    }
+
     return (
         <View>
             <Text>FetchKalender</Text>
             <Text>{props.sort}</Text>
-            <Text>{JSON.stringify(data)}</Text>
+            {/* <Text>{JSON.stringify(data)}</Text> */}
+            <SortKalender kalenderData={propsObject} />
         </View>
     )
 }
