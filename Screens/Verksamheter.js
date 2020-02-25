@@ -16,7 +16,7 @@ const Verksamheter = ({ navigation }) => {
         alla, gudstjanst, musik, barn, ung
     }
 
-    console.log('sortVerksamheter', sortVerksamheter)
+    //console.log('sortVerksamheter', sortVerksamheter)
     return (
         <View>
             <Tabmeny5 funktioner={funktioner} />

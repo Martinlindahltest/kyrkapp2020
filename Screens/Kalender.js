@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { View, Text, Button } from 'react-native'
 import Tabmeny5 from '../Components/Tabmeny5'
+import FetchKalender from '../Components/FetchKalender'
 
 const Kalender = ({ navigation }) => {
     const [sortKalender, setSortKalender] = useState('alla')
@@ -20,9 +21,11 @@ const Kalender = ({ navigation }) => {
 
     return (
         <View>
-            <Tabmeny5 funktioner={funktioner} />
             <Text>Kalender</Text>
-            <Text>{sortKalender}</Text>
+
+            <Tabmeny5 funktioner={funktioner} />
+            <FetchKalender sort={sortKalender} />
+
             <Button
                 title="Go to Details"
                 onPress={() => navigation.navigate('KalenderDetalj')}
