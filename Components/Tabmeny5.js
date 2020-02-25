@@ -33,7 +33,7 @@ export default function Tabmeny5(props) {
                 flex: 1, flexDirection: 'row',
             }}>
                 <View style={styles.tabItem}>
-                    <TouchableOpacity onPress={console.log('yuyuy')}>
+                    <TouchableOpacity onPress={() => props.testfunk()}>
                         <Image
                             style={styles.img}
                             source={require('../assets/tab5/Alla.png')}
