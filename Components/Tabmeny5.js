@@ -28,12 +28,11 @@ export default function Tabmeny5(props) {
     });
     return (
         <View style={styles.tabContainer}>
-
             <View style={{
                 flex: 1, flexDirection: 'row',
             }}>
                 <View style={styles.tabItem}>
-                    <TouchableOpacity onPress={() => props.testfunk()}>
+                    <TouchableOpacity onPress={() => props.funktioner.alla()}>
                         <Image
                             style={styles.img}
                             source={require('../assets/tab5/Alla.png')}
@@ -43,8 +42,7 @@ export default function Tabmeny5(props) {
                 </View>
 
                 <View style={styles.tabItem}>
-                    <TouchableOpacity onPress={console.log('yuyuy')}>
-
+                    <TouchableOpacity onPress={() => props.funktioner.gudstjanst()}>
                         <Image
                             style={styles.img}
                             source={require('../assets/tab5/Gudstjanst.png')}
@@ -53,7 +51,7 @@ export default function Tabmeny5(props) {
                     </TouchableOpacity>
                 </View>
                 <View style={styles.tabItem}>
-                    <TouchableOpacity onPress={console.log('yuyuy')}>
+                    <TouchableOpacity onPress={() => props.funktioner.musik()}>
 
                         <Image
                             style={styles.img}
@@ -64,8 +62,7 @@ export default function Tabmeny5(props) {
                 </View>
 
                 <View style={styles.tabItem}>
-                    <TouchableOpacity onPress={console.log('yuyuy')}>
-
+                    <TouchableOpacity onPress={() => props.funktioner.barn()}>
                         <Image
                             style={styles.img}
                             source={require('../assets/tab5/Barn.png')}
@@ -75,7 +72,7 @@ export default function Tabmeny5(props) {
                 </View>
 
                 <View style={styles.tabItem}>
-                    <TouchableOpacity onPress={console.log('yuyuy')}>
+                    <TouchableOpacity onPress={() => props.funktioner.ung()}>
                         <Image
                             style={styles.img}
                             source={require('../assets/tab5/Vuxen.png')}
