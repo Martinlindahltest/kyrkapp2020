@@ -5,7 +5,7 @@ import dbUrl from '../dbConfig/dbUrl'
 export default function FetchKalender(props) {
 
     const [hasError, setErrors] = useState();
-    const [data, setdata] = useState({});
+    const [data, setdata] = useState();
 
 
     async function fetchData() {
@@ -17,8 +17,35 @@ export default function FetchKalender(props) {
     }
 
     useEffect(() => {
+        console.log('datafetch kalender')
         fetchData();
-    }), [];
+    }, [])
+
+    const GtjObjekt = []
+    const MusikObjekt = []
+    const BarnObjekt = []
+    const VuxenObjekt = []
+
+    console.log(typeof data)
+
+    if (data) {
+        data.map(obj => {
+            if (obj.Verksamhetstyp === 'Gtj') {
+                GtjObjekt.push(obj)
+            }
+            if (obj.Verksamhetstyp === 'Musik') {
+                MusikObjekt.push(obj)
+            }
+            if (obj.Verksamhetstyp === 'Barn') {
+                BarnObjekt.push(obj)
+            }
+            if (obj.Verksamhetstyp === 'Vuxen') {
+                VuxenObjekt.push(obj)
+            }
+        }
+        )
+    }
+
     return (
         <View>
             <Text>FetchKalender</Text>

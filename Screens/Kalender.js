@@ -17,7 +17,7 @@ const Kalender = ({ navigation }) => {
         alla, gudstjanst, musik, barn, ung
     }
 
-    // console.log('sortKalender', sortKalender)
+    //console.log('sortKalender', sortKalender)
 
     return (
         <View>
