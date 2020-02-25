@@ -19,6 +19,7 @@ export default function Tabmeny5(props) {
             textAlign: 'center',
             backgroundColor: 'black',
             fontSize: 12,
+            marginTop: -8
         },
         tabContainer: {
             height: 80,
@@ -33,42 +34,54 @@ export default function Tabmeny5(props) {
             }}>
                 <View style={styles.tabItem}>
                     <TouchableOpacity onPress={console.log('yuyuy')}>
-
                         <Image
                             style={styles.img}
                             source={require('../assets/tab5/Alla.png')}
                         />
                         <Text style={styles.textUnderBild}>Alla</Text>
                     </TouchableOpacity>
+                </View>
 
+                <View style={styles.tabItem}>
+                    <TouchableOpacity onPress={console.log('yuyuy')}>
+
+                        <Image
+                            style={styles.img}
+                            source={require('../assets/tab5/Gudstjanst.png')}
+                        />
+                        <Text style={styles.textUnderBild}>Gudstjanst</Text>
+                    </TouchableOpacity>
                 </View>
                 <View style={styles.tabItem}>
-                    <Image
-                        style={styles.img}
-                        source={require('../assets/tab5/Gudstjanst.png')}
-                    />
-                    <Text style={styles.textUnderBild}>Gudstjanst</Text>
+                    <TouchableOpacity onPress={console.log('yuyuy')}>
+
+                        <Image
+                            style={styles.img}
+                            source={require('../assets/tab5/Musik.png')}
+                        />
+                        <Text style={styles.textUnderBild}>Musik</Text>
+                    </TouchableOpacity>
                 </View>
+
                 <View style={styles.tabItem}>
-                    <Image
-                        style={styles.img}
-                        source={require('../assets/tab5/Musik.png')}
-                    />
-                    <Text style={styles.textUnderBild}>Musik</Text>
+                    <TouchableOpacity onPress={console.log('yuyuy')}>
+
+                        <Image
+                            style={styles.img}
+                            source={require('../assets/tab5/Barn.png')}
+                        />
+                        <Text style={styles.textUnderBild}>Barn</Text>
+                    </TouchableOpacity>
                 </View>
+
                 <View style={styles.tabItem}>
-                    <Image
-                        style={styles.img}
-                        source={require('../assets/tab5/Barn.png')}
-                    />
-                    <Text style={styles.textUnderBild}>Barn</Text>
-                </View>
-                <View style={styles.tabItem}>
-                    <Image
-                        style={styles.img}
-                        source={require('../assets/tab5/Vuxen.png')}
-                    />
-                    <Text style={styles.textUnderBild}>Ung/Vuxen</Text>
+                    <TouchableOpacity onPress={console.log('yuyuy')}>
+                        <Image
+                            style={styles.img}
+                            source={require('../assets/tab5/Vuxen.png')}
+                        />
+                        <Text style={styles.textUnderBild}>Ung/Vuxen</Text>
+                    </TouchableOpacity>
                 </View>
             </View>
         </View>
