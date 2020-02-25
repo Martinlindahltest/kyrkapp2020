@@ -95,6 +95,73 @@ const MainNavigator = () => {
         )
     }
 
+    const forstasidaStack = () => {
+        return (
+            <Stack.Navigator>
+                <Stack.Screen
+                    name="ForstaSida"
+                    component={ForstaSida}
+                    options={navData => {
+                        return {
+                            headerTitle: 'Start',
+                            headerLeft: () => {
+                                // console.log(navData)
+                                return <HeaderButtons HeaderButtonComponent={HeaderButton}>
+                                    <Item
+                                        title="Menu"
+                                        iconName="ios-menu"
+                                        onPress={() => {
+                                            navData.navigation.toggleDrawer()
+                                        }}
+                                    />
+                                </HeaderButtons>
+                            }
+                        }
+                    }}
+                />
+            </Stack.Navigator>
+        )
+    }
+
+    const kalenderStack = () => {
+        return (
+            <Stack.Navigator initialRouteName="Kalender">
+                <Stack.Screen
+                    name="Kalender"
+                    component={Kalender}
+                    options={navData => {
+                        return {
+                            headerTitle: 'Kalender',
+                            headerLeft: () => {
+                                // console.log(navData)
+                                return <HeaderButtons HeaderButtonComponent={HeaderButton}>
+                                    <Item
+                                        title="Menu"
+                                        iconName="ios-menu"
+                                        onPress={() => {
+                                            navData.navigation.toggleDrawer()
+                                        }}
+                                    />
+                                </HeaderButtons>
+                            }
+                        }
+                    }}
+                />
+                <Stack.Screen
+                    name="KalenderDetalj"
+                    component={KalenderDetalj}
+                    options={navData => {
+                        return {
+                            headerTitle: ''
+                        }
+                    }}
+                />
+            </Stack.Navigator>
+        )
+    }
+
+
+
 
     return (
 
@@ -117,7 +184,7 @@ const MainNavigator = () => {
             }}>
                 <Drawer.Screen
                     name="Förstasida"
-                    component={ForstaSida}
+                    component={forstasidaStack}
                 />
                 <Drawer.Screen
                     name="Kalender"
