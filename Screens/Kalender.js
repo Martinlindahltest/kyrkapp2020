@@ -13,22 +13,26 @@ const Kalender = ({ navigation }) => {
     const barn = () => setSortKalender('barn')
     const ung = () => setSortKalender('ung')
 
+    function navRef(input, input2) {
+        navigation.navigate(input, input2)
+    }
+
     const funktioner = {
         alla, gudstjanst, musik, barn, ung
     }
 
-    //console.log('sortKalender', sortKalender)
+    //console.log('sortKalender', sortKalender) 
 
     return (
         <View>
             <Text>Kalender</Text>
 
             <Tabmeny5 funktioner={funktioner} />
-            <FetchKalender sort={sortKalender} />
+            <FetchKalender sort={sortKalender} navRef={navRef} />
 
             <Button
                 title="Go to Details"
-                onPress={() => navigation.navigate('KalenderDetalj')}
+                onPress={() => navRef('KalenderDetalj')}
             />
         </View>
     )

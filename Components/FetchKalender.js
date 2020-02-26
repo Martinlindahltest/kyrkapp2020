@@ -45,7 +45,7 @@ export default function FetchKalender(props) {
         )
     }
 
-    // console.log(MusikObjekt)
+    console.log('props FK', props)
 
     const propsObject = {
         GtjObjekt, MusikObjekt, BarnObjekt, VuxenObjekt, sort: props.sort
@@ -56,7 +56,7 @@ export default function FetchKalender(props) {
             <Text>FetchKalender</Text>
             <Text>{props.sort}</Text>
             {/* <Text>{JSON.stringify(data)}</Text> */}
-            <SortKalender kalenderData={propsObject} />
+            <SortKalender kalenderData={propsObject} navRef={props.navRef} />
         </View>
     )
 }
