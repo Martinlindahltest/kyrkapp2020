@@ -42,98 +42,97 @@ const KalenderDetaljScreen = (props) => {
     } = props.route.params.propsData
 
 
-    // const styles = StyleSheet.create({
-    //     rubrik: {
-    //         fontSize: 30,
-    //         padding: 3,
-    //         paddingBottom: 20,
-    //         paddingTop: 20
+    const styles = StyleSheet.create({
+        rubrik: {
+            fontSize: 30,
+            padding: 3,
+            paddingBottom: 20,
+            paddingTop: 20
 
-    //     },
-    //     text: {
-    //         fontSize: 20,
-    //         padding: 3
+        },
+        text: {
+            fontSize: 20,
+            padding: 3
 
-    //     },
-    //     ViewRuntText: {
-    //         //padding:30
-    //         paddingLeft: 30,
-    //         paddingRight: 30,
-    //         paddingTop: 5
-    //     }
-    // });
-
-
-    // let headerImage = <HeaderImageUtanText screen={'Ung/Vuxenkalender'} />
-
-    // if (Verksamhetstyp == 'ungVux') {
-    //     headerImage = <HeaderImageUtanText screen={'Ung/Vuxenkalender'} />
-    // }
-    // if (Verksamhetstyp == 'Gtj') {
-    //     headerImage = <HeaderImageUtanText screen={'Gudstjänstkalender'} />
-    // }
-    // if (Verksamhetstyp == 'Musik') {
-    //     headerImage = <HeaderImageUtanText screen={'Musikkalender'} />
-    // }
-    // if (Verksamhetstyp == 'Barn') {
-    //     headerImage = <HeaderImageUtanText screen={'Barnkalender'} />
-    // }
+        },
+        ViewRuntText: {
+            //padding:30
+            paddingLeft: 30,
+            paddingRight: 30,
+            paddingTop: 5
+        }
+    });
 
 
+    let headerImage = <HeaderImageUtanText screen={'Ung/Vuxenkalender'} />
 
-    // let prastPlaceholder = <View></View>
-    // if (Pr_st) {
-    //     prastPlaceholder = <Text style={styles.text}>Präst: {Pr_st}  </Text>
-
-    // }
-
-    // let musikerPlaceholder = <View></View>
-    // if (Musiker) {
-    //     musikerPlaceholder = <Text style={styles.text}>Musiker: {Musiker}  </Text>
-    // }
-
-
-    // let vaktmastarePlaceholder = <View></View>
-    // if (Vaktm_stare) {
-    //     vaktmastarePlaceholder = <Text style={styles.text}>Vaktmästare: {Vaktm_stare}  </Text>
-
-    // }
+    if (Verksamhetstyp == 'ungVux') {
+        headerImage = <HeaderImageUtanText screen={'Ung/Vuxenkalender'} />
+    }
+    if (Verksamhetstyp == 'Gtj') {
+        headerImage = <HeaderImageUtanText screen={'Gudstjänstkalender'} />
+    }
+    if (Verksamhetstyp == 'Musik') {
+        headerImage = <HeaderImageUtanText screen={'Musikkalender'} />
+    }
+    if (Verksamhetstyp == 'Barn') {
+        headerImage = <HeaderImageUtanText screen={'Barnkalender'} />
+    }
 
 
-    // let personalPlaceholder = <View></View>
-    // if (Personal) {
-    //     personalPlaceholder = <Text style={styles.text}>Personal: {Personal}  </Text>
 
-    // }
+    let prastPlaceholder = <View></View>
+    if (Pr_st) {
+        prastPlaceholder = <Text style={styles.text}>Präst: {Pr_st}  </Text>
+
+    }
+
+    let musikerPlaceholder = <View></View>
+    if (Musiker) {
+        musikerPlaceholder = <Text style={styles.text}>Musiker: {Musiker}  </Text>
+    }
+
+
+    let vaktmastarePlaceholder = <View></View>
+    if (Vaktm_stare) {
+        vaktmastarePlaceholder = <Text style={styles.text}>Vaktmästare: {Vaktm_stare}  </Text>
+
+    }
+
+
+    let personalPlaceholder = <View></View>
+    if (Personal) {
+        personalPlaceholder = <Text style={styles.text}>Personal: {Personal}  </Text>
+
+    }
 
 
 
 
     return (
-        <View></View>
 
-        // <ImageBackground source={require('../assets/Kalender17okt/bakgrundSten17okt.jpg')} style={{ width: '100%', height: '100%' }}>
+        <ImageBackground source={require('../assets/Kalender17okt/bakgrundSten17okt.jpg')} style={{ width: '100%', height: '100%' }}>
 
-        //     <ScrollView >
-        //         {headerImage}
+            <ScrollView >
+                {headerImage}
 
-        //         <View style={styles.ViewRuntText}>
-        //             <Text style={styles.rubrik}>{Aktivitet}</Text>
-        //             <Text style={styles.text}>Plats: {Lokal}  </Text>
-        //             <Text style={styles.text}>Tid: {StartSlut}  </Text>
-        //             {prastPlaceholder}
-        //             {musikerPlaceholder}
-        //             {vaktmastarePlaceholder}
-        //             {personalPlaceholder}
-        //             <Text></Text>
+                <View style={styles.ViewRuntText}>
+                    <Text style={styles.rubrik}>{Aktivitet}</Text>
+                    <Text style={styles.text}>Plats: {Lokal}  </Text>
+                    <Text style={styles.text}>Tid: {StartSlut}  </Text>
+                    {prastPlaceholder}
+                    {musikerPlaceholder}
+                    {vaktmastarePlaceholder}
+                    {personalPlaceholder}
+                    <Text></Text>
 
-        //             <Text style={styles.text}>{Internnotering}</Text>
-        //         </View>
-
+                    <Text style={styles.text}>{Internnotering}</Text>
+                </View>
 
 
-        //     </ScrollView>
-        // </ImageBackground>
+
+            </ScrollView>
+        </ImageBackground>
 
     )
 }
