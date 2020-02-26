@@ -32,7 +32,7 @@ const Kalender = ({ navigation }) => {
 
             <Button
                 title="Go to Details"
-                onPress={() => navRef('KalenderDetalj')}
+                onPress={() => navRef('KalenderDetalj', { names: ['Brent', 'Satya', 'Michaś'] })}
             />
         </View>
     )
