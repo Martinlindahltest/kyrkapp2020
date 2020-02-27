@@ -5,7 +5,6 @@ import Display from './Display'
 const SortKalender = (props) => {
 
     let { sort, GtjObjekt, MusikObjekt, BarnObjekt, VuxenObjekt } = props.kalenderData
-
     let currentArrayOfDisplayData = [...GtjObjekt, ...MusikObjekt, ...BarnObjekt, ...VuxenObjekt]
 
     if (sort === 'alla') {
@@ -35,7 +34,6 @@ const SortKalender = (props) => {
     return (
         <View>
             {jsxGtj}
-            <Text></Text>
         </View>
     )
 }
