@@ -29,15 +29,15 @@ const Kalender = ({ navigation }) => {
             <Text>Kalender</Text>
 
             <Tabmeny5 funktioner={funktioner} />
-            <HeaderImage screen={(sortKalender)} />
             <ScrollView>
+                <HeaderImage screen={(sortKalender)} />
                 <FetchKalender sort={sortKalender} navRef={navRef} />
             </ScrollView>
-
+            {/* 
             <Button
                 title="Go to Details"
                 onPress={() => navRef('KalenderDetalj', { names: ['Brent', 'Satya', 'Michaś'] })}
-            />
+            /> */}
         </View >
     )
 }
