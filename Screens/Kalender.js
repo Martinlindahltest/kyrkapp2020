@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { View, Text, Button } from 'react-native'
+import { View, Text, Button, ScrollView } from 'react-native'
 import Tabmeny5 from '../Components/Tabmeny5'
 import FetchKalender from '../Components/FetchKalender'
 
@@ -28,7 +28,9 @@ const Kalender = ({ navigation }) => {
             <Text>Kalender</Text>
 
             <Tabmeny5 funktioner={funktioner} />
-            <FetchKalender sort={sortKalender} navRef={navRef} />
+            <ScrollView>
+                <FetchKalender sort={sortKalender} navRef={navRef} />
+            </ScrollView>
 
             <Button
                 title="Go to Details"

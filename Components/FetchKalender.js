@@ -45,7 +45,7 @@ export default function FetchKalender(props) {
         )
     }
 
-    console.log('props FK', props)
+    //  console.log('props FK', props)
 
     const propsObject = {
         GtjObjekt, MusikObjekt, BarnObjekt, VuxenObjekt, sort: props.sort

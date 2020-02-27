@@ -5,7 +5,7 @@ import HeaderImageUtanText from '../Components/HeaderImageUtanText'
 
 const KalenderDetaljScreen = (props) => {
 
-    console.log('props i kdtj', props.route.params.propsData)
+    //console.log('props i kdtj', props.route.params.propsData)
 
     //console.log('props.navigation.state.params.propsData i kalenderdetalj', props.navigation.state.params.propsData)
     /** 

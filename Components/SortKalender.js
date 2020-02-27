@@ -8,19 +8,22 @@ const SortKalender = (props) => {
 
     //  console.log('sas', VuxenObjekt.length)
 
-    console.log(GtjObjekt[0])
+    //console.log('GtjObjekt[0]', GtjObjekt[0])
 
-    const jsxGtj = GtjObjekt.map(obj => <Display data={obj} navRef={props.navRef} />)
+    const jsxGtj = GtjObjekt.map(obj => {
+        const isoObj = new Date(obj.Datum)
+        const isoMonth = isoObj.getMonth()
+        const isoDay = isoObj.getDate()
 
+        return <Display key={obj.uuid} data={obj} navRef={props.navRef} objektetsDag={isoDay} objektetsMånad={isoMonth} />
+    })
 
     return (
         <View>
-            {jsxGtj[0]}
+            {jsxGtj}
             <Text></Text>
         </View>
     )
 }
 
 export default SortKalender
-
-const styles = StyleSheet.create({})
