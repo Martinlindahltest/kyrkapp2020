@@ -13,7 +13,12 @@ export default function FetchKalender(props) {
         const res = await fetch(dbUrl);
         res
             .json()
-            .then(res => setdata(res))
+            .then(res => {
+                //Sorterar i datumordning
+                let arrayMedDatabasobjekt = res.sort(function (a, b) {
+                    return (a.StartTime < b.StartTime) ? -1 : ((a.StartTime > b.StartTime) ? 1 : 0);
+                }); setdata(arrayMedDatabasobjekt)
+            })
             .catch(err => setErrors(err));
     }
 
@@ -28,21 +33,23 @@ export default function FetchKalender(props) {
     const VuxenObjekt = []
 
     if (data) {
-        data.map(obj => {
-            if (obj.Verksamhetstyp === 'Gtj') {
-                GtjObjekt.push(obj)
-            }
-            if (obj.Verksamhetstyp === 'Musik') {
-                MusikObjekt.push(obj)
-            }
-            if (obj.Verksamhetstyp === 'Barn') {
-                BarnObjekt.push(obj)
-            }
-            if (obj.Verksamhetstyp === 'Vuxen') {
-                VuxenObjekt.push(obj)
-            }
-        }
-        )
+        console.log('object', data)
+
+        // data.map(obj => {
+        //     if (obj.Verksamhetstyp === 'Gtj') {
+        //         GtjObjekt.push(obj)
+        //     }
+        //     if (obj.Verksamhetstyp === 'Musik') {
+        //         MusikObjekt.push(obj)
+        //     }
+        //     if (obj.Verksamhetstyp === 'Barn') {
+        //         BarnObjekt.push(obj)
+        //     }
+        //     if (obj.Verksamhetstyp === 'Vuxen') {
+        //         VuxenObjekt.push(obj)
+        //     }
+        // }
+        //)
     }
 
     //  console.log('props FK', props)
@@ -56,7 +63,7 @@ export default function FetchKalender(props) {
             <Text>FetchKalender</Text>
             <Text>{props.sort}</Text>
             {/* <Text>{JSON.stringify(data)}</Text> */}
-            <SortKalender kalenderData={propsObject} navRef={props.navRef} />
+            {/* <SortKalender kalenderData={propsObject} navRef={props.navRef} /> */}
         </View>
     )
 }
