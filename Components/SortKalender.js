@@ -1,16 +1,30 @@
 import React from 'react'
-import { StyleSheet, Text, View } from 'react-native'
+import { Text, View } from 'react-native'
 import Display from './Display'
 
 const SortKalender = (props) => {
 
     let { sort, GtjObjekt, MusikObjekt, BarnObjekt, VuxenObjekt } = props.kalenderData
 
-    //  console.log('sas', VuxenObjekt.length)
+    let currentArrayOfDisplayData = [...GtjObjekt, ...MusikObjekt, ...BarnObjekt, ...VuxenObjekt]
 
-    //console.log('GtjObjekt[0]', GtjObjekt[0])
+    if (sort === 'alla') {
+        currentArrayOfDisplayData = [...GtjObjekt, ...MusikObjekt, ...BarnObjekt, ...VuxenObjekt]
+    }
+    if (sort === 'gudtjänst') {
+        currentArrayOfDisplayData = [...GtjObjekt]
+    }
+    if (sort === 'musik') {
+        currentArrayOfDisplayData = [...MusikObjekt]
+    }
+    if (sort === 'barn') {
+        currentArrayOfDisplayData = [...BarnObjekt]
+    }
+    if (sort === 'ung') {
+        currentArrayOfDisplayData = [...VuxenObjekt]
+    }
 
-    const jsxGtj = GtjObjekt.map(obj => {
+    const jsxGtj = currentArrayOfDisplayData.map(obj => {
         const isoObj = new Date(obj.Datum)
         const isoMonth = isoObj.getMonth()
         const isoDay = isoObj.getDate()
